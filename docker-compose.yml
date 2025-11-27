@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  products-db:
+    image: postgres:16
+    container_name: products-db
+    environment:
+      POSTGRES_DB: productsdb
+      POSTGRES_USER: products_user
+      POSTGRES_PASSWORD: products_pass
+    volumes:
+      - products-db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  products-service:
+    build:
+      context: ./api/storeflow-products-service
+      dockerfile: Dockerfile
+    container_name: storeflow-products-service
+    depends_on:
+      - products-db
+    environment:
+      SERVER_PORT: 8081
+      SPRING_DATASOURCE_URL: jdbc:postgresql://products-db:5432/productsdb
+      SPRING_DATASOURCE_USERNAME: products_user
+      SPRING_DATASOURCE_PASSWORD: products_pass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      API_SECURITY_KEY: secret-public-api-key
+    ports:
+      - "8081:8081"
+
+  inventory-db:
+    image: postgres:16
+    container_name: inventory-db
+    environment:
+      POSTGRES_DB: inventorydb
+      POSTGRES_USER: inventory_user
+      POSTGRES_PASSWORD: inventory_pass
+    volumes:
+      - inventory-db-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+  inventory-service:
+    build:
+      context: ./api/storeflow-inventory-service
+      dockerfile: Dockerfile
+    container_name: storeflow-inventory-service
+    depends_on:
+      - inventory-db
+    environment:
+      SERVER_PORT: 8082
+      SPRING_DATASOURCE_URL: jdbc:postgresql://inventory-db:5432/inventorydb
+      SPRING_DATASOURCE_USERNAME: inventory_user
+      SPRING_DATASOURCE_PASSWORD: inventory_pass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      API_SECURITY_KEY: secret-public-api-key
+    ports:
+      - "8082:8082"
+
+volumes:
+  products-db-data:
+  inventory-db-data:

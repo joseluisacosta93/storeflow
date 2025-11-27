@@ -1,0 +1,18 @@
+cat > .gitignore << 'EOF'
+# Maven / Java
+api/**/target/
+api/**/.mvn/
+api/**/logs/
+api/**/*.log
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.nuxt/
+
+# IDEs
+*.iml
+.idea/
+.vscode/
+EOF
