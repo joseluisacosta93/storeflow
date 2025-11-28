@@ -37,7 +37,6 @@ StoreFlow/
 Desde la raíz del proyecto (`StoreFlow/`):
 
 ```bash
-cd docker
 docker compose up -d
 ```
 
@@ -233,7 +232,6 @@ Hay una prueba de integración que valida el flujo completo usando:
    - O bien con Docker (recomendado):
 
      ```bash
-     cd docker
      docker compose up -d
      ```
 
@@ -278,7 +276,6 @@ Si todo está OK, verás algo como:
 - Levantar todo con Docker:
 
   ```bash
-  cd docker
   docker compose up -d
   ```
 
