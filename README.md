@@ -236,6 +236,7 @@ Hay una prueba de integración que valida el flujo completo usando:
 - BD H2 en memoria para **inventory**
 - Microservicio real de **products** en `http://localhost:8081`
 - API Key `secret-public-api-key`
+- Para correr las pruebas de client fuera del entorno de docker se deben instalar las dependecias cd client npm i
 
 ### 8.1. Pasos previos
 
