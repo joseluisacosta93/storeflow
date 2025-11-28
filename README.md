@@ -15,19 +15,13 @@ El frontend de la solución (storeflow-ui) corre en modo desarrollo en `http://l
 - Java 17
 - Maven 3.9+
 - Docker y Docker Compose
-- Git (opcional, si se clona el repositorio)
 
 ---
 
 ## 2. Estructura del proyecto
 
 ```text
-StoreFlow/
-├─ api/
-│  ├─ storeflow-products-service/
-│  └─ storeflow-inventory-service/
-└─ docker/
-   └─ docker-compose.yml
+Clonar el proyecto git clone https://github.com/joseluisacosta93/storeflow
 ```
 
 ---
@@ -92,6 +86,23 @@ El servicio quedará en:
 - `http://localhost:8082`
 
 ---
+
+### 4.3. Client
+El servicio del cliente quedará en:
+
+- `http://localhost:5173`
+
+### 4.4. Estructura del proyecto
+
+```text
+StoreFlow/
+├─ api/
+│  ├─ storeflow-products-service/
+│  └─ storeflow-inventory-service/
+└─ client/
+└─ docker-compose.yml
+```
+
 
 ## 5. Endpoints principales
 
