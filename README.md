@@ -290,7 +290,7 @@ Desde la carpeta del inventario:
 
 ```bash
 cd api/storeflow-inventory-service
-nvm test
+mvn test
 ```
 Esta prueba corre todos los test de este mircoservicio
 
@@ -300,7 +300,7 @@ Desde la carpeta del client:
 
 ```bash
 cd client
-nvm run test
+npm run test
 ```
 Esta prueba corre todos los test de client
 
