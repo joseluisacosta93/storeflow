@@ -236,7 +236,9 @@ Hay una prueba de integración que valida el flujo completo usando:
 - BD H2 en memoria para **inventory**
 - Microservicio real de **products** en `http://localhost:8081`
 - API Key `secret-public-api-key`
-- Para correr las pruebas de client fuera del entorno de docker se deben instalar las dependecias cd client npm i
+- Para correr las pruebas de client fuera del entorno de docker se deben instalar las dependecias
+```bash cd client ```
+```bash npm i  ```
 
 ### 8.1. Pasos previos
 
@@ -281,6 +283,27 @@ Si todo está OK, verás algo como:
 [INFO] BUILD SUCCESS
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ```
+
+### 8.3. Ejecutar pruebas
+
+Desde la carpeta del inventario:
+
+```bash
+cd api/storeflow-inventory-service
+nvm test
+```
+Esta prueba corre todos los test de este mircoservicio
+
+### 8.4. Ejecutar pruebas cliente
+
+Desde la carpeta del client:
+
+```bash
+cd client
+nvm run test
+```
+Esta prueba corre todos los test de client
+
 
 ---
 
