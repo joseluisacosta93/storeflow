@@ -40,6 +40,7 @@ Esto levanta:
 - `inventory-db`: PostgreSQL para **storeflow-inventory-service**
 - `storeflow-products-service`: microservicio de productos en `http://localhost:8081`
 - `storeflow-inventory-service`: microservicio de inventario en `http://localhost:8082`
+- `Client`: clienteen `http://localhost:5173`
 
 Para ver el estado de los contenedores:
 
