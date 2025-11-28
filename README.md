@@ -1,4 +1,3 @@
-
 # StoreFlow - Microservicios de Productos e Inventario
 
 Esta solución implementa dos microservicios independientes que se comunican entre sí utilizando JSON:API:
@@ -6,7 +5,8 @@ Esta solución implementa dos microservicios independientes que se comunican ent
 - **storeflow-products-service**: gestión de productos.
 - **storeflow-inventory-service**: gestión de inventario y compras, consultando al microservicio de productos.
 
-Ambos servicios están desarrollados con **Spring Boot 3**, utilizan **PostgreSQL** (en Docker) en ejecución normal y **H2 en memoria** para la prueba integral automatizada.
+Ambos servicios están desarrollados con **Spring Boot 3**, utilizan **PostgreSQL** (en Docker) en ejecución normal y **H2 en memoria** para la prueba integral automatizada.  
+El frontend de la solución (storeflow-ui) corre en modo desarrollo en `http://localhost:5173/`.
 
 ---
 
@@ -37,7 +37,6 @@ StoreFlow/
 Desde la raíz del proyecto (`StoreFlow/`):
 
 ```bash
-cd docker
 docker compose up -d
 ```
 
@@ -233,7 +232,6 @@ Hay una prueba de integración que valida el flujo completo usando:
    - O bien con Docker (recomendado):
 
      ```bash
-     cd docker
      docker compose up -d
      ```
 
@@ -278,7 +276,6 @@ Si todo está OK, verás algo como:
 - Levantar todo con Docker:
 
   ```bash
-  cd docker
   docker compose up -d
   ```
 
